@@ -7,6 +7,10 @@
 
     var canvas, context, height, width, x_axis, y_axis;
 
+    var c = 0;
+    var timePassed = 0;
+    var pixelScale = 100;
+
     BackyardBrains.ContinuousView.setup = function () {
         canvas = document.getElementById('waveformCanvas');
         context = canvas.getContext('2d');
@@ -31,7 +35,28 @@
         drawXAxis();
         drawYAxis();
         drawTickmarks();
+
+        context.save();
         context.strokeStyle = 'rgb(0,255,0)';
+        drawWave(c);
+        context.restore();
+
+        timePassed = timePassed + .01;
+        c = timePassed*Math.PI;
+        setTimeout(draw, 10);
+    }
+
+    function drawWave(c) {
+        var x = c;
+        var y = Math.sin(c*2);
+        context.beginPath();
+        context.moveTo(y_axis, pixelScale * y+x_axis);
+        for (i = 0; i <= width; i += 1) {
+            x = c+i/pixelScale;
+            y = Math.sin(x*2);
+            context.lineTo(i, pixelScale*y+x_axis);
+        }
+        context.stroke();
     }
 
     function drawXAxis () {
