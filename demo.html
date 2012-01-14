@@ -1,10 +1,10 @@
-<html>
+<!doctype html>
+<html5>
   <head>
     <title>Backyard Brains HTML5 Demo</title>
     <link rel="stylesheet" type="text/css"
           href="http://fonts.googleapis.com/css?family=Buda:300">
-    <script type="text/javascript" src="amber.js"></script>
-    <script type="text/javascript" src="byb.js"></script>
+
     <style type="text/css">
       body {
       background: #000;
@@ -15,18 +15,37 @@
       font-size: 3em;
       text-align: center;
       }
-      #tutorial {
+      #waveformCanvas {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      border: 1px solid white;
+      border: 1px solid #333;
+      }
+      label {
+      color: #fff;
+      font-family: "Buda", sans;
+      font-size: 1em;
       }
     </style>
   </head>
-  <body onload="draw();">
+  <body onload="BackyardBrains.ContinuousView.setup();">
     <h3 id="demo-title">Backyard Brains HTML5 Demo</h3>
-    <canvas id="tutorial" width="800"
+    <canvas id="waveformCanvas" width="800"
             height="400">
     </canvas>
+    <form name="sizeControl" id="sizeControl">
+
+      <div>
+        <label for="datapointsWidth">Number of samples in set</label>
+        <input type="text" id="datapointsWidth" >
+      </div>
+      <div>
+        <label for="datapointsHeight">Maximum sample value in window</label>
+        <input type="text" id="datapointsHeight">
+      </div>
+
+      <input type="button" value="Draw a sine wave" onClick="">
+    
   </body>
+  <script type="text/javascript" src="byb.js"></script>
 </html>
