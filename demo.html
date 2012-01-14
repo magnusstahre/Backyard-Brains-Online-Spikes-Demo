@@ -7,23 +7,30 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body onload="BackyardBrains.ContinuousView.setup();">
-    <h3 id="demo-title">Backyard Brains HTML5 Demo</h3>
+    <h3 id="demo-title" class="text">Backyard Brains HTML5 Demo</h3>
     <canvas id="waveformCanvas" width="800"
             height="400">
     </canvas>
     <form name="sizeControl" id="sizeControl">
+      <div class="controlBlock">
 
-      <div>
-        <label for="datapointsWidth">Number of samples in set</label>
-        <input type="text" id="datapointsWidth" >
+      <dl>
+        <dt><label for="datapointsWidth" class="text">
+            Number of samples in set</label></dt>
+        <dd><input type="text" id="datapointsWidth" ></dd>
+      </dl>
+      <dl>
+        <dt><label for="datapointsHeight" class="text">
+            Maximum sample value in window</label></dt>
+        <dd><input type="text" id="datapointsHeight"></dd>
+      </dl>
       </div>
-      <div>
-        <label for="datapointsHeight">Maximum sample value in window</label>
-        <input type="text" id="datapointsHeight">
+
+      <div class="controlBlock">
+        <input type="button" value="Draw a sine wave" onClick="">
       </div>
 
-      <input type="button" value="Draw a sine wave" onClick="">
-
+    </form>
   </body>
   <script type="text/javascript" src="byb.js"></script>
 </html>
