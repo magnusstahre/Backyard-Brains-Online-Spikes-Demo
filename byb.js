@@ -26,7 +26,7 @@
         draw();
     }
 
-    draw = function () {
+    function draw () {
         context.clearRect(0, 0, width, height);
         drawXAxis();
         drawYAxis();
@@ -59,6 +59,12 @@
 
     function bluePen () {
         context.strokeStyle = 'rgb(0,0,255)';
+        context.lineWidth = 2;
+        context.beginPath();
+    }
+
+    function greenPen() {
+        context.strokeStyle = 'rgb(0,255,0)';
         context.lineWidth = 2;
         context.beginPath();
     }
