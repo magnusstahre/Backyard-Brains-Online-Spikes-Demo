@@ -1,7 +1,5 @@
-(function () {
-    if (typeof BackyardBrains == 'undefined') {
-        window.BackyardBrains = {};
-    }
+(function (w) {
+    w.BackyardBrains = w.BackyardBrains || {};
 
     BackyardBrains.ContinuousView = {};
 
@@ -93,7 +91,7 @@
         context.lineWidth = 2;
         context.beginPath();
     }
-})();
+})(window);
 
 /*
 var datapointsWidth = 8000;
